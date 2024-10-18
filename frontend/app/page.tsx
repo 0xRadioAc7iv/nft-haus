@@ -41,7 +41,7 @@ export default function Home() {
       ref={containerRef}
       className="bg-[#020113] text-white overflow-x-hidden"
     >
-      {/* <Navbar /> */}
+      <Navbar />
 
       <div className="relative w-full h-screen">
         {/* Background Image */}
