@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Explore() {
   return (
-    <div className="bg-black text-white min-h-screen m-0 p-0 ">
-      {/* the flex */}
-      <div className="border border-white p-3 flex justify-between">
+    <div className="bg-black text-white min-h-screen m-0 p-0">
+      {/* Sticky Overview section */}
+      <div className="border border-white p-3 flex justify-between sticky top-0 bg-black z-10">
         <div className="text-2xl font-bold">Overview</div>
         <div>
           <div className="relative w-[460px]">
@@ -29,209 +29,128 @@ export default function Explore() {
         </div>
       </div>
 
-      {/* //The seconf flex */}
-      <div className="flex p-3 w-full items-stretch gap-3">
-        <div className="basis-2/3 border border-white p-4 flex gap-3 bg-slate-400 rounded-lg">
-          <div className="basis-1/2 border border-white rounded-xl">
-            <Image
-              src="/one.jpg"
-              alt="nft"
-              height={880}
-              width={480}
-              className="object-cover rounded-xl"
-            />
-          </div>
-          <div className="basis-1/2 border border-white p-4">
-            <div className="flex justify-between">
-              <span className="text-lg font-semibold">
-                SuperHero Collection
-              </span>
-              <span>5567</span>
+      {/* Scrollable Content */}
+      <div
+        className="overflow-y-auto"
+        style={{ maxHeight: "calc(100vh - 72px)" }}
+      >
+        {/* The second flex */}
+        <div className="flex p-3 w-full items-stretch gap-3">
+          <div className="basis-2/3 border border-white p-4 flex gap-3 bg-slate-400 rounded-lg">
+            <div className="basis-1/2 border border-white rounded-xl">
+              <Image
+                src="/one.jpg"
+                alt="nft"
+                height={880}
+                width={480}
+                className="object-cover rounded-xl"
+              />
             </div>
-            {/* //second */}
-            <div className="flex gap-3 mt-3">
-              <div>
-                <Image
-                  src="/two.jpg"
-                  alt="profile-image"
-                  height={40}
-                  width={40}
-                  className="rounded-full"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm">Vaishnavi Patil</span>
-                <span className="text-xs">@vai_shhh27</span>
-              </div>
-            </div>
-
-            {/* third */}
-            <div className="mt-4">
-              <span className="text-xs ">CURRENT BID</span>
+            <div className="basis-1/2 border border-white p-4">
               <div className="flex justify-between">
-                <div>123456</div>
-                <div>123456</div>
+                <span className="text-lg font-semibold">
+                  SuperHero Collection
+                </span>
+                <span>5567</span>
+              </div>
+              {/* second */}
+              <div className="flex gap-3 mt-3">
+                <div>
+                  <Image
+                    src="/two.jpg"
+                    alt="profile-image"
+                    height={40}
+                    width={40}
+                    className="rounded-full"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm">Vaishnavi Patil</span>
+                  <span className="text-xs">@vai_shhh27</span>
+                </div>
+              </div>
+
+              {/* third */}
+              <div className="mt-4">
+                <span className="text-xs ">CURRENT BID</span>
+                <div className="flex justify-between">
+                  <div>123456</div>
+                  <div>123456</div>
+                </div>
+              </div>
+
+              <div className="flex justify-between mt-4">
+                <Button>View ArtWork</Button>
+                <Button className="bg-purple-900">Place Bid</Button>
               </div>
             </div>
+          </div>
 
-            <div className="flex justify-between mt-4">
-              <Button>View ArtWork</Button>
-              <Button className="bg-purple-900">Place Bid</Button>
+          <div className="basis-1/3 border border-white p-4 rounded-lg flex flex-col">
+            <span>My Account</span>
+
+            <span className="text-xs mt-7">Total Balance</span>
+            <span className="text-4xl mt-1">$50,460.00</span>
+            <span className="text-xs mt-2">30.45% Up than last month</span>
+
+            <div className="flex justify-between mt-10">
+              <div className="flex flex-col items-center justify-center w-24 h-18 bg-purple-600 text-white rounded-xl p-2">
+                <Home className="w-6 h-6 " />
+                <span className="text-sm opacity-50">Home</span>
+              </div>
+
+              {/* Second Div */}
+              <div className="flex flex-col items-center justify-center w-24 h-18 bg-blue-600 text-white rounded-xl p-2">
+                <User className="w-6 h-6" />
+                <span className="text-sm  opacity-50">Profile</span>
+              </div>
+
+              {/* Third Div */}
+              <div className="flex  flex-col items-center justify-center w-24 h-18 bg-green-600 text-white rounded-xl p-2">
+                <Settings className="w-6 h-6 " />
+                <span className="text-sm opacity-50">Settings</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="basis-1/3 border border-white p-4 rounded-lg flex flex-col">
-          <span>My Account</span>
+        {/* The other flex */}
+        <div className="border border-white p-3 flex gap-3">
+          <div className="basis-2/3 border border-white">Vaish</div>
+          <div className="basis-1/3 border border-white p-2">
+            <span className="text-2xl">⭐ Top Creators</span>
 
-          <span className="text-xs mt-7">Total Balance</span>
-          <span className="text-4xl mt-1">$50,460.00</span>
-          <span className="text-xs mt-2">30.45% Up than last month</span>
-
-          <div className="flex justify-between mt-10">
-            <div className="flex flex-col items-center justify-center w-24 h-18 bg-purple-600 text-white rounded-xl p-2">
-              <Home className="w-6 h-6 " />
-              <span className="text-sm opacity-50">Home</span>
-            </div>
-
-            {/* Second Div */}
-            <div className="flex flex-col items-center justify-center w-24 h-18 bg-blue-600 text-white rounded-xl p-2">
-              <User className="w-6 h-6" />
-              <span className="text-sm  opacity-50">Profile</span>
-            </div>
-
-            {/* Third Div */}
-            <div className="flex  flex-col items-center justify-center w-24 h-18 bg-green-600 text-white rounded-xl p-2">
-              <Settings className="w-6 h-6 " />
-              <span className="text-sm opacity-50">Settings</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* the other flex */}
-      <div className="border border-white p-3 flex gap-3">
-        <div className="basis-2/3 border border-white">Vaish</div>
-        <div className="basis-1/3 border border-white p-2">
-          <span className="text-2xl">⭐ Top Creators</span>
-
-          <div className="border border-white rounded-sm mt-3 flex  justify-center  items-center ">
-            {/* //the profile div */}
-            <div className="flex flex-col gap-2 justify-center">
-              {/* First Item */}
-              <div className="flex border border-white items-center gap-12 justify-center mt-2">
-                <div className="flex gap-3 items-center p-2">
-                  <div className="border border-white flex items-center">
-                    <Image
-                      src="/three.jpg"
-                      alt="profile"
-                      height={40}
-                      width={40}
-                      className="rounded-full"
-                    />
+            <div className="border border-white rounded-sm mt-3 flex  justify-center  items-center">
+              {/* Profile Div */}
+              <div className="flex flex-col gap-2 justify-center">
+                {/* Repeated Profile Items */}
+                {[...Array(5)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="flex border border-white items-center gap-12 justify-center mt-2"
+                  >
+                    <div className="flex gap-3 items-center p-2">
+                      <div className="border border-white flex items-center">
+                        <Image
+                          src="/three.jpg"
+                          alt="profile"
+                          height={40}
+                          width={40}
+                          className="rounded-full"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm">Vaishnavi Patil</span>
+                        <span className="text-xs">vai_shhh27</span>
+                      </div>
+                    </div>
+                    <div>
+                      <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
+                        Add
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm">Vaishnavi Patil</span>
-                    <span className="text-xs">vai_shhh27</span>
-                  </div>
-                </div>
-                <div>
-                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
-                    Add
-                  </Button>
-                </div>
-              </div>
-
-              <div className="flex border border-white items-center gap-12 justify-center">
-                <div className="flex gap-3 items-center p-2">
-                  <div className="border border-white flex items-center">
-                    <Image
-                      src="/three.jpg"
-                      alt="profile"
-                      height={40}
-                      width={40}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm">Vaishnavi Patil</span>
-                    <span className="text-xs">vai_shhh27</span>
-                  </div>
-                </div>
-                <div>
-                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
-                    Add
-                  </Button>
-                </div>
-              </div>
-
-              <div className="flex border border-white items-center gap-12 justify-center">
-                <div className="flex gap-3 items-center p-2">
-                  <div className="border border-white flex items-center">
-                    <Image
-                      src="/three.jpg"
-                      alt="profile"
-                      height={40}
-                      width={40}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm">Vaishnavi Patil</span>
-                    <span className="text-xs">vai_shhh27</span>
-                  </div>
-                </div>
-                <div>
-                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
-                    Add
-                  </Button>
-                </div>
-              </div>
-
-              <div className="flex border border-white items-center gap-12 justify-center">
-                <div className="flex gap-3 items-center p-2">
-                  <div className="border border-white flex items-center">
-                    <Image
-                      src="/three.jpg"
-                      alt="profile"
-                      height={40}
-                      width={40}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm">Vaishnavi Patil</span>
-                    <span className="text-xs">vai_shhh27</span>
-                  </div>
-                </div>
-                <div>
-                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
-                    Add
-                  </Button>
-                </div>
-              </div>
-
-              <div className="flex border border-white items-center gap-12 justify-center">
-                <div className="flex gap-3 items-center p-2">
-                  <div className="border border-white flex items-center">
-                    <Image
-                      src="/three.jpg"
-                      alt="profile"
-                      height={40}
-                      width={40}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm">Vaishnavi Patil</span>
-                    <span className="text-xs">vai_shhh27</span>
-                  </div>
-                </div>
-                <div>
-                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
-                    Add
-                  </Button>
-                </div>
+                ))}
               </div>
             </div>
           </div>
