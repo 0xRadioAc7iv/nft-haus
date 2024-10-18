@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   const handleExplore = () => {
-    router.push("/explore");
+    router.push("dashboard/explore");
   };
 
   return (

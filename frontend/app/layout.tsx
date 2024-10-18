@@ -37,7 +37,6 @@ export default function RootLayout({
           ::-webkit-scrollbar {
             display: none;
           }
-
           html, body {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
