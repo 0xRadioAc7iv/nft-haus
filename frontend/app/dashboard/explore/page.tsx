@@ -110,7 +110,87 @@ export default function Explore() {
       </div>
 
       {/* the other flex */}
-      <div className="border border-white p-3"></div>
+      <div className="border border-white p-3 flex gap-3">
+        <div className="basis-2/3 border border-white">Vaish</div>
+        <div className="basis-1/3 border border-white p-2">
+          <span className="text-2xl">⭐ Top Creators</span>
+
+          <div className="border border-white rounded-sm mt-3 flex  justify-center  items-center ">
+            {/* //the profile div */}
+            <div className="flex flex-col gap-2 justify-center">
+              {/* First Item */}
+              <div className="flex border border-white items-center gap-12 justify-center mt-2">
+                <div className="flex gap-3 items-center p-3">
+                  <div className="border border-white flex items-center">
+                    <Image
+                      src="/three.jpg"
+                      alt="profile"
+                      height={40}
+                      width={40}
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm">Vaishnavi Patil</span>
+                    <span className="text-xs">vai_shhh27</span>
+                  </div>
+                </div>
+                <div>
+                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
+                    Add
+                  </Button>
+                </div>
+              </div>
+
+              <div className="flex border border-white items-center gap-12 justify-center">
+                <div className="flex gap-3 items-center p-3">
+                  <div className="border border-white flex items-center">
+                    <Image
+                      src="/three.jpg"
+                      alt="profile"
+                      height={40}
+                      width={40}
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm">Vaishnavi Patil</span>
+                    <span className="text-xs">vai_shhh27</span>
+                  </div>
+                </div>
+                <div>
+                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
+                    Add
+                  </Button>
+                </div>
+              </div>
+
+              <div className="flex border border-white items-center gap-12 justify-center">
+                <div className="flex gap-3 items-center p-3">
+                  <div className="border border-white flex items-center">
+                    <Image
+                      src="/three.jpg"
+                      alt="profile"
+                      height={40}
+                      width={40}
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm">Vaishnavi Patil</span>
+                    <span className="text-xs">vai_shhh27</span>
+                  </div>
+                </div>
+                <div>
+                  <Button className="rounded-full h-[40px] w-[90px] bg-purple-800">
+                    Add
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
