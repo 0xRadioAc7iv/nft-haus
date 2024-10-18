@@ -5,8 +5,10 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const bgRef = useRef(null);
   const containerRef = useRef(null);
   const targetDivRef = useRef(null);
@@ -29,6 +31,10 @@ export default function Home() {
       },
     });
   }, []);
+
+  const handleExplore = () => {
+    router.push("/explore");
+  };
 
   return (
     <div
@@ -60,9 +66,15 @@ export default function Home() {
         {/* Text Overlay */}
         <div className="relative z-30 flex justify-start h-full max-w-6xl mx-auto pt-24 ml-10">
           <div className="flex flex-col gap-2">
-            <span className="text-9xl font-bold">Discover, Trade</span>
-            <span className="text-9xl font-bold">and Mint</span>
-            <span className="text-9xl font-bold">Unique Digital Assets</span>
+            <span className="text-8xl font-bold">Discover, Trade</span>
+            <span className="text-8xl font-bold">and Mint</span>
+            <span className="text-8xl font-bold">Unique Digital Assets</span>
+            <button
+              className="p-3 bg-blue-500 w-[210px] text-lg rounded-lg mt-4"
+              onClick={handleExplore}
+            >
+              Explore
+            </button>
           </div>
         </div>
       </div>
@@ -90,7 +102,16 @@ export default function Home() {
       </div>
 
       {/* Additional content to ensure scrollability */}
-      <div className="h-screen bg-[#020113]"></div>
+      <div className="h-screen bg-[#020113]">
+        <div className="flex flex-col items-center mt-36 gap-10">
+          <span className="text-4xl font-bold">The Heading</span>
+          <div className="flex gap-4">
+            <Image src="/fl-1.svg" alt="card-1" height={330} width={330} />
+            <Image src="/fl-2.svg" alt="card-1" height={330} width={330} />
+            <Image src="/fl-3.svg" alt="card-1" height={330} width={330} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
