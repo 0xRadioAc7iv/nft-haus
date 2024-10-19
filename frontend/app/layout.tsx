@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "../styles/globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Providers from "./providers";
+import "@rainbow-me/rainbowkit/styles.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,9 +50,9 @@ export default function RootLayout({
         className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased overflow-y-auto`}
       >
         <div className="bg-[#020113] text-white overflow-x-hidden">
-        {/* <Navbar /> */}
+          {/* <Navbar /> */}
         </div>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

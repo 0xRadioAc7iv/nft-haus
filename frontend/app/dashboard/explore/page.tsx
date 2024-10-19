@@ -2,6 +2,7 @@ import React from "react";
 import { Search, Home, Settings, User } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import Image from "next/image";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Explore() {
   return (
@@ -23,9 +24,7 @@ export default function Explore() {
           </div>
         </div>
         <div>
-          <Button className="bg-purple-700 text-white font-bold rounded-xl">
-            Connect Wallet
-          </Button>
+          <ConnectButton />
         </div>
       </div>
 
