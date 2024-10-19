@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import classNames from "classnames";
+import { useWriteContract, useTransaction } from "wagmi";
+import { FACTORY_CONTRACT_ABI, FACTORY_CONTRACT_ADDRESS } from "@/lib/config";
 
 export default function CreateNft() {
   const [name, setName] = useState<string>("");
@@ -13,6 +15,24 @@ export default function CreateNft() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const { writeContractAsync } = useWriteContract();
+
+  const createNFT = async (
+    name: string,
+    ticker: string,
+    uri: string,
+    description: string
+  ) => {
+    const tx = await writeContractAsync({
+      abi: FACTORY_CONTRACT_ABI,
+      address: FACTORY_CONTRACT_ADDRESS,
+      functionName: "createNewNFT",
+      args: [name, ticker, uri, description],
+    });
+
+    console.log(tx);
+  };
 
   const handleClick = () => {
     if (fileInputRef.current) {
@@ -78,6 +98,8 @@ export default function CreateNft() {
       }
 
       const imageURI = await uploadRequest.json();
+
+      createNFT(name, ticker, imageURI, description);
     } catch (error) {
       console.log(error);
       alert(
