@@ -2,14 +2,6 @@ import React from "react";
 import { Search, Home, Settings, User } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../../components/ui/card";
 
 export default function Explore() {
   const auctionItems = [
@@ -54,9 +46,7 @@ export default function Explore() {
           </div>
         </div>
         <div>
-          <Button className="bg-purple-700 text-white font-bold rounded-xl">
-            Connect Wallet
-          </Button>
+          <ConnectButton />
         </div>
       </div>
 
