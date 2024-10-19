@@ -2,8 +2,39 @@ import React from "react";
 import { Search, Home, Settings, User } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
 
 export default function Explore() {
+  const auctionItems = [
+    {
+      id: 1,
+      title: "Vintage Watch",
+      description: "A rare collector's timepiece",
+      currentBid: 1000,
+      imageFileName: "three.jpg",
+    },
+    {
+      id: 2,
+      title: "Modern Art Painting",
+      description: "Abstract piece by emerging artist",
+      currentBid: 1500,
+      imageFileName: "two.jpg",
+    },
+    {
+      id: 3,
+      title: "Antique Vase",
+      description: "18th century porcelain masterpiece",
+      currentBid: 2000,
+      imageFileName: "three.jpg",
+    },
+  ];
   return (
     <div className="bg-black text-white min-h-screen m-0 p-0">
       {/* Sticky Overview section */}
@@ -36,7 +67,7 @@ export default function Explore() {
       >
         {/* The second flex */}
         <div className="flex p-3 w-full items-stretch gap-3">
-          <div className="basis-2/3 border border-white p-4 flex gap-3 bg-slate-400 rounded-lg">
+          <div className="basis-2/3 border border-white p-4 flex gap-2 bg-slate-400 rounded-lg">
             <div className="basis-1/2 border border-white rounded-xl">
               <Image
                 src="/one.jpg"
@@ -116,18 +147,54 @@ export default function Explore() {
 
         {/* The other flex */}
         <div className="border border-white p-3 flex gap-3">
-          <div className="basis-2/3 border border-white">Vaish</div>
+          <div className="basis-2/3 border border-white">
+            <div className="border border-white">
+              <span className="text-2xl p-2 font-semibold">🔥Hot Bids</span>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {auctionItems.map((item) => (
+                  <Card
+                    key={item.id}
+                    className="flex flex-col bg-black border border-white text-white"
+                  >
+                    <div className="relative h-48 w-full flex items-center justify-center overflow-hidden pt-2">
+                      <Image
+                        src={`/images/${item.imageFileName}`}
+                        alt={item.title}
+                        width={320}
+                        height={240}
+                        objectFit="contain"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>{item.title}</CardTitle>
+                      <CardDescription>{item.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-semibold">
+                        Current bid: ${item.currentBid.toLocaleString()}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="mt-auto">
+                      <Button className="w-full">Place Bid</Button>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="basis-1/3 border border-white p-2">
             <span className="text-2xl">⭐ Top Creators</span>
 
-            <div className="border border-white rounded-sm mt-3 flex  justify-center  items-center">
+            <div className="border border-white rounded-sm mt-3 flex  justify-center items-center">
               {/* Profile Div */}
-              <div className="flex flex-col gap-2 justify-center">
+              <div className="flex flex-col gap-2 justify-center mt-2">
                 {/* Repeated Profile Items */}
                 {[...Array(5)].map((_, index) => (
                   <div
                     key={index}
-                    className="flex border border-white items-center gap-12 justify-center mt-2"
+                    className="flex border border-white items-center gap-20 justify-center rounded-sm"
                   >
                     <div className="flex gap-3 items-center p-2">
                       <div className="border border-white flex items-center">
