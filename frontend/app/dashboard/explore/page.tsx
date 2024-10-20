@@ -186,7 +186,7 @@ export default function Explore() {
                   >
                     <div className="flex items-center gap-3">
                       <Image
-                        src="/three.jpg"
+                        src="/images/three.jpg"
                         alt="profile"
                         height={40}
                         width={40}
