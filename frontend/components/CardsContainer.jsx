@@ -1,3 +1,5 @@
+"use client"; // Add this line to enable client-side functionality
+
 import {
   Card,
   CardContent,
@@ -8,8 +10,11 @@ import {
 } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function CardsContainer() {
+  const router = useRouter();
+
   const bottomAuctionItems = [
     {
       id: 1,
@@ -47,13 +52,19 @@ export default function CardsContainer() {
       imageFileName: "three.jpg",
     },
   ];
+
   return (
     <div className="p-3">
       <div className="basis-2/3 border border-white bg-gray-900 rounded-lg">
         <div className="p-3">
           <div className="flex items-center justify-between">
             <span className="text-2xl font-semibold">🔥Hot Bids</span>
-            <Button className="bg-purple-800">View all drops</Button>
+            <Button
+              className="bg-purple-800"
+              onClick={() => router.push("/dashboard/drops")}
+            >
+              View all drops
+            </Button>
           </div>
           <div className="flex gap-3 mt-3">
             {bottomAuctionItems.map((item) => (

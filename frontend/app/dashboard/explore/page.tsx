@@ -6,6 +6,7 @@ import { Button } from "../../../components/ui/button";
 import Image from "next/image";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import CardsContainer from "../../../components/CardsContainer";
+
 import {
   Card,
   CardContent,
