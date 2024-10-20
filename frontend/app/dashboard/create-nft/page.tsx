@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import classNames from "classnames";
-import { useWriteContract, useTransaction } from "wagmi";
+import { useWriteContract } from "wagmi";
 import { FACTORY_CONTRACT_ABI, FACTORY_CONTRACT_ADDRESS } from "@/lib/config";
 
 export default function CreateNft() {
