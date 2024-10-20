@@ -1,5 +1,6 @@
 import CardsContainer from "@/components/CardsContainer";
 import Image from "next/image";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Profile() {
   return (
@@ -17,12 +18,13 @@ export default function Profile() {
         
         <div className="text-center">
           <h2 className="text-2xl font-bold">Vaishnavi Patil</h2>
-          <p className="text-gray-400">john.doe@example.com</p>
+          <div className="flex justify-center">
+          <p className="text-gray-400 py-2"><ConnectButton/></p>
+          </div>
           <p className="mt-2">NFT Collector | Digital Artist</p>
         </div>
       </div>
 
-      {/* Cards Container Section */}
       <div className="w-full">
         <CardsContainer />
       </div>
