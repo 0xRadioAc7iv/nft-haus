@@ -70,7 +70,7 @@ export default function Explore() {
             <div className="basis-2/3 border border-white p-4 flex gap-2 bg-[#130a3b] rounded-lg">
               <div className="basis-1/2 border border-white rounded-xl">
                 <Image
-                  src="/one.jpg"
+                  src="/images/one.jpg"
                   alt="nft"
                   height={880}
                   width={480}
@@ -86,7 +86,7 @@ export default function Explore() {
                 </div>
                 <div className="flex gap-3 mt-3">
                   <Image
-                    src="/two.jpg"
+                    src="/images/two.jpg"
                     alt="profile-image"
                     height={40}
                     width={40}
