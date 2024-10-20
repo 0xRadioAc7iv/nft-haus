@@ -94,7 +94,7 @@ export default function CardsContainer() {
                   </p>
                 </CardContent>
                 <CardFooter className="mt-auto pt-2 px-3 pb-3">
-                  <Button className="w-full">Place Bid</Button>
+                  <Button className="w-full bg-[#cac5e6]">Place Bid</Button>
                 </CardFooter>
               </Card>
             ))}

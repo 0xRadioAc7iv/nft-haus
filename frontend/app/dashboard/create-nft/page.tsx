@@ -33,7 +33,7 @@ export default function CreateNft() {
     });
 
     console.log(tx);
-    if(tx){
+    if (tx) {
       setIspromptvisible(true);
     }
   };
@@ -198,26 +198,39 @@ export default function CreateNft() {
             />
           </div>
           <div className="flex gap-2">
-            <Button className="bg-gray-700" onClick={() => resetInputs()}>
+            <Button
+              className="bg-[#300fe4] w-[140px]"
+              onClick={() => resetInputs()}
+            >
               Reset
             </Button>
-            <Button className="bg-gray-700" onClick={() => deployNFT()}>
+            <Button
+              className="bg-[#300fe4] w-[140px]"
+              onClick={() => deployNFT()}
+            >
               Create
             </Button>
           </div>
         </div>
       </div>
       {isPromptvisible && (
-  <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-    <div className="bg-[#1A1A1A] p-6 rounded-lg shadow-lg text-center">
-      <h3 className="text-white text-xl mb-4">Do you want to create an airdrop?</h3>
-      <div className="flex gap-4 justify-center mt-4">
-        <Button className="bg-green-700">Yes</Button>
-        <Button className="bg-red-700" onClick={() => setIspromptvisible(false)}>No</Button>
-      </div>
-    </div>
-  </div>
-)}
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+          <div className="bg-[#1A1A1A] p-6 rounded-lg shadow-lg text-center">
+            <h3 className="text-white text-xl mb-4">
+              Do you want to create an airdrop?
+            </h3>
+            <div className="flex gap-4 justify-center mt-4">
+              <Button className="bg-green-700">Yes</Button>
+              <Button
+                className="bg-red-700"
+                onClick={() => setIspromptvisible(false)}
+              >
+                No
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
