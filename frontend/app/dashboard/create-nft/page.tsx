@@ -15,6 +15,7 @@ export default function CreateNft() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isPromptvisible, setIspromptvisible] = useState<boolean>(false);
 
   const { writeContractAsync } = useWriteContract();
 
@@ -32,6 +33,9 @@ export default function CreateNft() {
     });
 
     console.log(tx);
+    if(tx){
+      setIspromptvisible(true);
+    }
   };
 
   const handleClick = () => {
@@ -203,6 +207,17 @@ export default function CreateNft() {
           </div>
         </div>
       </div>
+      {isPromptvisible && (
+  <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+    <div className="bg-[#1A1A1A] p-6 rounded-lg shadow-lg text-center">
+      <h3 className="text-white text-xl mb-4">Do you want to create an airdrop?</h3>
+      <div className="flex gap-4 justify-center mt-4">
+        <Button className="bg-green-700">Yes</Button>
+        <Button className="bg-red-700" onClick={() => setIspromptvisible(false)}>No</Button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
