@@ -42,6 +42,11 @@ export const Sidebar: React.FC = () => (
           href="/dashboard/offramping"
         />
         <NavItem
+          icon={<BarChart3 className="h-5 w-5" />}
+          label="Collections"
+          href="/dashboard/collections"
+        />
+        <NavItem
           icon={<PlusCircle className="h-5 w-5" />}
           label="Create NFT"
           href="/dashboard/create-nft"
