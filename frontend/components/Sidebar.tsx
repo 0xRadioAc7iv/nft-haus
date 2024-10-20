@@ -38,11 +38,6 @@ export const Sidebar: React.FC = () => (
         />
         <NavItem
           icon={<BarChart3 className="h-5 w-5" />}
-          label="OffRamp"
-          href="/dashboard/offramping"
-        />
-        <NavItem
-          icon={<BarChart3 className="h-5 w-5" />}
           label="Collections"
           href="/dashboard/collections"
         />
