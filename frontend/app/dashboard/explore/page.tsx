@@ -101,8 +101,8 @@ export default function Explore() {
                 <div className="mt-6">
                   <span className="text-xs">CURRENT BID</span>
                   <div className="flex justify-between">
-                    <div>123456</div>
-                    <div>123456</div>
+                    <div>1.11 eth</div>
+                    <div>1.11 eth</div>
                   </div>
                 </div>
                 <div className="flex justify-between mt-10">

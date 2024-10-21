@@ -128,8 +128,11 @@ export default function TableInfo() {
         </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice}>
-              <TableCell className="font-medium ">{invoice.invoice}</TableCell>
+            <TableRow 
+              key={invoice.invoice}
+              className="transition-all hover:backdrop-blur-md hover:border hover:border-purple-800 hover:bg-purple-950/60"
+            >
+              <TableCell className="font-medium">{invoice.invoice}</TableCell>
               <TableCell className="px-4">{invoice.collectionName}</TableCell>
               <TableCell className="px-4">{invoice.floorPrice}</TableCell>
               <TableCell className="px-4">{invoice.floorChange}</TableCell>
