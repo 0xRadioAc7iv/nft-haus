@@ -48,9 +48,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-sans antialiased overflow-y-auto`}
       >
-        <div className="bg-[#020113] text-white overflow-x-hidden">
-          {/* <Navbar /> */}
-        </div>
+        <div className="bg-[#020113] text-white overflow-x-hidden"></div>
         <Providers>{children}</Providers>
       </body>
     </html>

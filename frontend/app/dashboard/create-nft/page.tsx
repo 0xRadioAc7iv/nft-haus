@@ -5,8 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import classNames from "classnames";
-import { useWriteContract } from "wagmi";
+import { useAccount, useWriteContract } from "wagmi";
 import { FACTORY_CONTRACT_ABI, FACTORY_CONTRACT_ADDRESS } from "@/lib/config";
+import { toast } from "react-toastify";
+import CustomToastContainer from "@/components/CustomToastContainer";
 
 export default function CreateNft() {
   const [name, setName] = useState<string>("");
@@ -18,6 +20,11 @@ export default function CreateNft() {
   const [isPromptvisible, setIspromptvisible] = useState<boolean>(false);
 
   const { writeContractAsync } = useWriteContract();
+  const { isConnected } = useAccount();
+
+  const showError = () => {
+    toast.error("Please connect your wallet!");
+  };
 
   const createNFT = async (
     name: string,
@@ -68,6 +75,11 @@ export default function CreateNft() {
   };
 
   const deployNFT = async () => {
+    if (!isConnected) {
+      showError();
+      return;
+    }
+
     if (!name) {
       alert("Please enter a name!");
       return;
@@ -110,9 +122,6 @@ export default function CreateNft() {
         "Trouble uploading the file to IPFS. Please contact the website owner."
       );
     }
-
-    // Call createNewNFT() from NFTFactory Contract
-    // Display Deployed NFT Contract Address
   };
 
   return (
@@ -220,7 +229,9 @@ export default function CreateNft() {
               Do you want to create an airdrop?
             </h3>
             <div className="flex gap-4 justify-center mt-4">
-              <Button className="bg-purple-800/80 backdrop-blur-md border border-purple-900">Yes</Button>
+              <Button className="bg-purple-800/80 backdrop-blur-md border border-purple-900">
+                Yes
+              </Button>
               <Button
                 className="bg-purple-800/80 backdrop-blur-md border border-purple-900"
                 onClick={() => setIspromptvisible(false)}
@@ -231,6 +242,7 @@ export default function CreateNft() {
           </div>
         </div>
       )}
+      <CustomToastContainer />
     </div>
   );
 }
