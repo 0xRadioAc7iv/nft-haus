@@ -55,8 +55,8 @@ export default function CardsContainer() {
 
   return (
     <div className="p-3">
-      <div className="basis-2/3 border border-white bg-gray-900 rounded-lg">
-        <div className="p-3">
+      <div className="basis-2/3 bg-[#020113] rounded-lg">
+        <div className="p-1">
           <div className="flex items-center justify-between">
             <span className="text-2xl font-semibold">🔥Hot Bids</span>
             <Button
@@ -66,11 +66,11 @@ export default function CardsContainer() {
               View all drops
             </Button>
           </div>
-          <div className="flex gap-3 mt-3">
+          <div className="flex gap-2 mt-3">
             {bottomAuctionItems.map((item) => (
               <Card
                 key={item.id}
-                className="flex flex-col bg-black border border-white text-white"
+                className="flex flex-col border bg-purple-500/10 backdrop-blur-md border-purple-950 text-white"
               >
                 <div className="relative h-40 w-full flex rounded-xl items-center justify-center overflow-hidden pt-1 mt-2">
                   <Image
@@ -94,7 +94,9 @@ export default function CardsContainer() {
                   </p>
                 </CardContent>
                 <CardFooter className="mt-auto pt-2 px-3 pb-3">
-                  <Button className="w-full bg-[#cac5e6]">Place Bid</Button>
+                  <Button className="w-full bg-purple-800/80 border border-purple-950 backdrop-blur-md">
+                    Place Bid
+                  </Button>
                 </CardFooter>
               </Card>
             ))}

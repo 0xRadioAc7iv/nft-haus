@@ -19,9 +19,9 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, href }) => (
 
 export const Sidebar: React.FC = () => (
   <div className="flex h-full flex-col gap-2">
-    <div className="flex h-[82px] items-center px-6 border border-white">
+    <div className="flex h-[82px] items-center px-6">
       <Link
-        className="flex items-center gap-2 font-semibold text-white"
+        className="flex items-center gap-2 font-semibold text-gray-200"
         href="/dashboard/explore"
       >
         <Wallet className="h-6 w-6" />

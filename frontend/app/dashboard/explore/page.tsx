@@ -42,10 +42,10 @@ export default function Explore() {
   ];
 
   return (
-    <div className="bg-[#020113] text-white min-h-screen h-full flex flex-col">
+    <div className="bg-[#020113] text-gray-200 min-h-screen h-full flex flex-col">
       <div className="flex flex-col flex-grow bg-[#020113]">
         {/* Sticky Overview section */}
-        <div className="border-b border-white p-3 flex justify-between sticky top-0 bg-black z-10">
+        <div className="border-b border-gray-700 p-3 flex justify-between sticky top-0 bg-[#020113] z-10">
           <div className="text-2xl font-bold">Overview</div>
           <div className="relative w-[460px]">
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
@@ -64,11 +64,11 @@ export default function Explore() {
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-grow overflow-y-auto bg-black">
+        <div className="flex-grow overflow-y-auto bg-purple-">
           {/* Featured NFT and Account Summary */}
           <div className="flex p-3 w-full items-stretch gap-3">
-            <div className="basis-2/3 border border-white p-4 flex gap-2 bg-[#130a3b] rounded-lg">
-              <div className="basis-1/2 border border-white rounded-xl">
+            <div className="basis-2/3 border p-4 flex gap-5 bg-purple-500/10 backdrop-blur-md border-purple-950 rounded-lg">
+              <div className="basis-1/2 rounded-xl">
                 <Image
                   src="/one.jpg"
                   alt="nft"
@@ -77,7 +77,7 @@ export default function Explore() {
                   className="object-cover rounded-xl"
                 />
               </div>
-              <div className="basis-1/2 border border-white p-4">
+              <div className="basis-1/2 ">
                 <div className="flex justify-between">
                   <span className="text-lg font-semibold">
                     SuperHero Collection
@@ -97,38 +97,44 @@ export default function Explore() {
                     <span className="text-xs">@vai_shhh27</span>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-6">
                   <span className="text-xs">CURRENT BID</span>
                   <div className="flex justify-between">
                     <div>123456</div>
                     <div>123456</div>
                   </div>
                 </div>
-                <div className="flex justify-between mt-4">
-                  <Button variant="outline" className="bg-purple-900">
+                <div className="flex justify-between mt-10">
+                  <Button
+                    variant="outline"
+                    className="bg-purple-800/80 backdrop-blur-md border border-purple-900"
+                  >
                     View ArtWork
                   </Button>
-                  <Button variant="outline" className="bg-purple-900">
+                  <Button
+                    variant="outline"
+                    className="bg-purple-800/80 backdrop-blur-md border border-purple-900"
+                  >
                     Place Bid
                   </Button>
                 </div>
               </div>
             </div>
-            <div className="basis-1/3 border border-white p-4 rounded-lg flex flex-col bg-[#2d16a5]">
+            <div className="basis-1/3 border border-purple-950 p-4 rounded-lg flex flex-col bg-purple-800/60 backdrop-blur-md">
               <span>My Account</span>
               <span className="text-xs mt-7">Total Balance</span>
               <span className="text-4xl mt-1">$50,460.00</span>
               <span className="text-xs mt-2">30.45% Up than last month</span>
               <div className="flex justify-between mt-10">
-                <div className="flex flex-col items-center justify-center w-24 h-18 bg-[#3b18f8] text-white rounded-xl p-2">
+                <div className="flex flex-col items-center justify-center w-24 h-16 backdrop-blur-md border border-purple-800 bg-purple-950/60 text-white rounded-xl p-2">
                   <Home className="w-6 h-6" />
-                  <span className="text-sm opacity-50">Home</span>
+                  <span className="text-sm opacity-50 text-gray-300">Home</span>
                 </div>
-                <div className="flex flex-col items-center justify-center w-24 h-18 bg-[#3b18f8] text-white rounded-xl p-2">
+                <div className="flex flex-col items-center justify-center w-24 h-16 backdrop-blur-md bg-purple-950/60 border border-purple-800 text-white rounded-xl p-2">
                   <User className="w-6 h-6" />
                   <span className="text-sm opacity-50">Profile</span>
                 </div>
-                <div className="flex flex-col items-center justify-center w-24 h-18 bg-[#3b18f8] text-white rounded-xl p-2">
+                <div className="flex flex-col items-center justify-center w-24 h-16 backdrop-blur-md bg-purple-950/60 border border-purple-800 text-white rounded-xl p-2">
                   <Settings className="w-6 h-6" />
                   <span className="text-sm opacity-50">Settings</span>
                 </div>
@@ -137,15 +143,17 @@ export default function Explore() {
           </div>
 
           {/* Hot Bids and Top Creators */}
-          <div className="border-t border-white p-3 flex gap-3">
-            <div className="basis-2/3 border border-white bg-black rounded-lg">
-              <div className="p-3">
-                <span className="text-2xl font-semibold">🔥Hot Bids</span>
+          <div className=" p-3 flex gap-3">
+            <div className="basis-2/3  bg-[#020113] rounded-lg">
+              <div className="p-1 border border-purple-950 rounded-lg">
+                <span className="text-2xl font-semibold text-gray-200">
+                  🔥Hot Bids
+                </span>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
                   {auctionItems.map((item) => (
                     <Card
                       key={item.id}
-                      className="flex flex-col bg-[#130a3b] border border-white text-white"
+                      className="flex flex-col  border bg-purple-500/10 backdrop-blur-md border-purple-950 text-gray-300"
                     >
                       <div className="relative h-40 w-full flex rounded-xl items-center justify-center overflow-hidden pt-1 mt-2">
                         <Image
@@ -169,20 +177,22 @@ export default function Explore() {
                         </p>
                       </CardContent>
                       <CardFooter className="mt-auto pt-2 px-3 pb-3">
-                        <Button className="w-full">Place Bid</Button>
+                        <Button className="w-full bg-purple-800/80 backdrop-blur-md">
+                          Place Bid
+                        </Button>
                       </CardFooter>
                     </Card>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="basis-1/3 border border-white p-3 bg-black rounded-lg">
-              <span className="text-2xl">⭐ Top Creators</span>
-              <div className="mt-3 flex flex-col gap-2 bg-[#130a3b]">
+            <div className="basis-1/3 border border-purple-950 p-3  rounded-lg">
+              <span className="text-2xl font-semibold">⭐ Top Creators</span>
+              <div className="mt-3 flex flex-col gap-1">
                 {[...Array(5)].map((_, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-2 border border-white rounded-lg"
+                    className="flex items-center justify-between p-2 rounded-lg border bg-purple-500/10 backdrop-blur-md border-purple-950"
                   >
                     <div className="flex items-center gap-3">
                       <Image
@@ -199,7 +209,7 @@ export default function Explore() {
                         </span>
                       </div>
                     </div>
-                    <Button className="rounded-full h-[40px] w-[90px] bg-[#2b08ee]">
+                    <Button className="rounded-full h-[40px] w-[90px] bg-purple-800/80 backdrop-blur-md">
                       Add
                     </Button>
                   </div>
