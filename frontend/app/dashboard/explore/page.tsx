@@ -6,6 +6,7 @@ import { Button } from "../../../components/ui/button";
 import Image from "next/image";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import CardsContainer from "../../../components/CardsContainer";
+import TopCreators from "../../../components/TopCreators";
 
 import {
   Card,
@@ -47,13 +48,13 @@ export default function Explore() {
         {/* Sticky Overview section */}
         <div className="border-b border-gray-700 p-3 flex justify-between sticky top-0 bg-[#020113] z-10">
           <div className="text-2xl font-bold">Overview</div>
-          <div className="relative w-[460px]">
+          <div className="relative w-[460px] ">
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-              <Search className="w-5 h-5 text-gray-400" />
+              <Search className="w-5 h-5 text-gray-200" />
             </div>
             <input
               type="search"
-              className="w-full p-2 pl-12 text-sm text-white border rounded-full bg-gray-700 border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+              className=" backdrop-blur-md border border-purple-800 bg-purple-950/60 w-full p-2 pl-12 text-sm text-whiterounded-full rounded-full placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search for transaction, creator, etc."
               required
             />
@@ -186,36 +187,8 @@ export default function Explore() {
                 </div>
               </div>
             </div>
-            <div className="basis-1/3 border border-purple-950 p-3  rounded-lg">
-              <span className="text-2xl font-semibold">⭐ Top Creators</span>
-              <div className="mt-3 flex flex-col gap-1">
-                {[...Array(5)].map((_, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-2 rounded-lg border bg-purple-500/10 backdrop-blur-md border-purple-950"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src="/images/three.jpg"
-                        alt="profile"
-                        height={40}
-                        width={40}
-                        className="rounded-full"
-                      />
-                      <div className="flex flex-col">
-                        <span className="text-sm">Vaishnavi Patil</span>
-                        <span className="text-xs text-gray-400">
-                          @vai_shhh27
-                        </span>
-                      </div>
-                    </div>
-                    <Button className="rounded-full h-[40px] w-[90px] bg-purple-800/80 backdrop-blur-md">
-                      Add
-                    </Button>
-                  </div>
-                ))}
-              </div>
-            </div>
+           {/* //top creators */}
+           <TopCreators/>
           </div>
 
           {/* Cards container */}

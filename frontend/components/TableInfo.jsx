@@ -112,10 +112,10 @@ const invoices = [
 
 export default function TableInfo() {
   return (
-    <div className="p-4 border border-white mt-4">
-      <Table className="border border-white rounded-xl">
+    <div className="p-4 mt-4">
+      <Table className="border-2 border-gray-700 rounded-full">
         <TableHeader>
-          <TableRow className="p-3">
+          <TableRow className="p-4">
             <TableHead className="w-[100px]">#</TableHead>
             <TableHead className="px-4">COLLECTION</TableHead>
             <TableHead className="px-4">FLOOR PRICE</TableHead>

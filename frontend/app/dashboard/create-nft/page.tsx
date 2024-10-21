@@ -116,7 +116,7 @@ export default function CreateNft() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020113] px-8 pb-5">
+    <div className="min-h-screen bg-[#020113] px-8 pt-8">
       <div className="text-white">
         <h2 className="text-4xl/loose">Create an NFT</h2>
         <h3>
@@ -124,7 +124,7 @@ export default function CreateNft() {
           information.
         </h3>
       </div>
-      <div className="flex flex-row md:flex-row gap-12 mt-8">
+      <div className="flex flex-row md:flex-row gap-10 mt-8">
         <div
           className={classNames(
             "w-1/2 rounded-xl flex justify-center items-center hover:cursor-pointer relative",
@@ -167,7 +167,7 @@ export default function CreateNft() {
               placeholder="Name your NFT"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="bg-transparent border-gray-600 text-white hover:border-gray-400 mt-2"
+              className="bg-transparent border-gray-600 text-white hover:border-gray-400 w-full mt-2"
             />
           </div>
 
@@ -199,13 +199,13 @@ export default function CreateNft() {
           </div>
           <div className="flex gap-2">
             <Button
-              className="bg-[#300fe4] w-[140px]"
+              className="bg-purple-800/80 backdrop-blur-md border border-purple-900 w-full"
               onClick={() => resetInputs()}
             >
               Reset
             </Button>
             <Button
-              className="bg-[#300fe4] w-[140px]"
+              className="bg-purple-800/80 backdrop-blur-md border border-purple-900 w-full"
               onClick={() => deployNFT()}
             >
               Create
@@ -220,9 +220,9 @@ export default function CreateNft() {
               Do you want to create an airdrop?
             </h3>
             <div className="flex gap-4 justify-center mt-4">
-              <Button className="bg-green-700">Yes</Button>
+              <Button className="bg-purple-800/80 backdrop-blur-md border border-purple-900">Yes</Button>
               <Button
-                className="bg-red-700"
+                className="bg-purple-800/80 backdrop-blur-md border border-purple-900"
                 onClick={() => setIspromptvisible(false)}
               >
                 No

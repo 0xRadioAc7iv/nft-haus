@@ -25,7 +25,7 @@ export const Sidebar: React.FC = () => (
         href="/dashboard/explore"
       >
         <Wallet className="h-6 w-6" />
-        <span>NFT Haus</span>
+        <span className="text-lg font-bold">NFT Haus</span>
       </Link>
     </div>
     <div className="flex-1 overflow-auto py-3">
