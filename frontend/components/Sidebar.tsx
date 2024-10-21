@@ -37,14 +37,14 @@ export const Sidebar: React.FC = () => (
           href="/dashboard/explore"
         />
         <NavItem
-          icon={<BarChart3 className="h-5 w-5" />}
-          label="Collections"
-          href="/dashboard/collections"
-        />
-        <NavItem
           icon={<PlusCircle className="h-5 w-5" />}
           label="Create NFT"
           href="/dashboard/create-nft"
+        />
+        <NavItem
+          icon={<BarChart3 className="h-5 w-5" />}
+          label="Collections"
+          href="/dashboard/collections"
         />
         <NavItem
           icon={<Settings className="h-5 w-5" />}
