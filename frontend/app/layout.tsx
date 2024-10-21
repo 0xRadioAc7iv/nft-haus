@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/globals.css";
 import { Poppins } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import Providers from "./providers";
 import "@rainbow-me/rainbowkit/styles.css";
 
