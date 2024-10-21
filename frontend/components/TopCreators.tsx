@@ -16,7 +16,7 @@ export default function TopCreators() {
     },
     {
       name: "Jill Todkar",
-      username: "@jp_todkar123",
+      username: "@jilltodkar",
       image: "/images/one.jpg",
     },
     {
